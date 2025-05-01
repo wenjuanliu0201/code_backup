@@ -1,0 +1,23 @@
+#从本地install package
+install.packages("/Users/wenjuanliu/Downloads/semTools_0.5-6.tar.gz",repos=NULL,type="source")
+
+#文件读取
+dat <- read.delim(pipe("pbpaste"),header= T) #读clipboard
+d <- read.csv("aggregated_data_2025.csv", fileEncoding="utf-8") #读csv
+
+#统计量读取
+#Sex
+table(dat[1])/nrow(dat)
+#Age
+table(dat[2])/nrow(dat)
+#Eyear
+table(dat[3])/nrow(dat)
+
+#graphic
+library(lavaanPlot)
+lavaanPlot(result3, coef = TRUE, stand = TRUE)
+
+library(lavaangui)
+#使用方法暂时不清楚
+lavaangui()
+
